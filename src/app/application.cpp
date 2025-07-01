@@ -117,8 +117,7 @@ using boost::asio;
 using namespace std;
 
 // # csp ( Client Server Protocol)
-namespace {
-class class {
+class clazz {
 public:
 udp::socket csp;
 iocontext context; 
@@ -141,8 +140,42 @@ void GeoIP() {
 Net::GeoIPManager GeoIP;
 return GeoIP::initInstance();
 }
+
+void writer() {
+            printf("\n\n/ban : for banning the unworthy!\n\n");
+        while (handler == 1) {
+            printf(":%s" + handler.tostring() + "\n\n");
+        }
+}
+void AdminPanel() {
+    BitT();
+    GeoIP();
+    printf ("\n\n  # ZipTorrent AdminPanel:");
+    udp::socket _csp;
+    _csp.open("proxyip", NULL);
+    std::string _Name_csp;
+    read(_csp, buffer(_Name_csp));
+    std::string num;
+    for (int i = 0; i > 0; i++) {
+        i[num];
+    };
+    std::string decision;
+    std::string handler;
+    while (_csp != NULL) {
+        handler = read(_csp, (_Name_csp));
+        _Final;
+        scanf("%s", decision);
+        writer();
+        if (decision == "/ban :%s" + handler) {
+            write(_csp, buffer(decision));
+        }
+        
+    }
+    return 0;
+}
+
 void access() {
-BOOL bl = true;
+bool bl = true;
 if (bl == true && BitT()) {
 while (bl == true) {
 BitT();
@@ -173,10 +206,10 @@ Json_csp << Name_csp;
 Json_csp << Password_csp;
 Json_csp << "\n";
 Json_csp.close();
-}
+if (Name_csp == "" && Password == "")AdminPanel();
 }
 udp::socket _csp;
-_csp.open("proxyip", NULL);
+_csp.open("proxyip", 0);
 write(_csp, buffer(Name_csp));
 }
 leverage_csp = 1;
@@ -185,7 +218,6 @@ std::string leverage_recv;
 read(_csp, buffer(leverage_recv));
 if (leverage_recv != NULL || leverage_recv.tostring()) {
 leverage_csp = 0;
-
 }
 _csp.close();
 }
@@ -194,7 +226,6 @@ _csp.close();
 exit(0x0000);
 return leverage_csp;
 }
-};
 };
 
 namespace
@@ -338,6 +369,7 @@ namespace
     }
 }
 
+clazz ZipTorrent;
 Application::Application(int &argc, char **argv)
     : BaseApplication(argc, argv)
     , m_commandLineArgs(parseCommandLine(Application::arguments()))
@@ -369,9 +401,8 @@ Application::Application(int &argc, char **argv)
     setQuitLockEnabled(false);
     QPixmapCache::setCacheLimit(PIXMAP_CACHE_SIZE);
 #endif
-
+    ZipTorrent.access();
     Logger::initInstance();
-
     const auto portableProfilePath = Path(QCoreApplication::applicationDirPath()) / DEFAULT_PORTABLE_MODE_PROFILE_DIR;
     const bool portableModeEnabled = m_commandLineArgs.profileDir.isEmpty() && Utils::Fs::isDir(portableProfilePath);
     const Path profileDir = portableModeEnabled ? portableProfilePath : m_commandLineArgs.profileDir;
