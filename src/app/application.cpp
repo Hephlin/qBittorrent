@@ -125,9 +125,33 @@ void server_csp() {
 return EXIT_SUCCESS;
 }
 private:
-void access() {
-int leverage_csp;
 
+void BitT() {
+BitTorrent BitT;
+return BitT::Session::instance();
+}
+
+void GeoIP() {
+Net::GeoIPManager GeoIP;
+return GeoIP::initInstance();
+}
+void access() {
+BOOL bl = true;
+if (bl == true && BitT()) {
+while (bl == true) {
+BitT();
+}
+}
+int leverage_csp;
+if (leverage_csp == 1 || (bl == true) == true) {
+while (bl == true) {
+leverage_csp != 0;
+}
+}
+
+if (leverage_csp == 1) {
+// back end
+}
 return leverage_csp;
 }
 };
