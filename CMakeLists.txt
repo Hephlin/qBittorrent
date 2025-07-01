@@ -61,7 +61,8 @@ configure_file("src/base/version.h.in" "${CMAKE_CURRENT_SOURCE_DIR}/src/base/ver
 
 add_subdirectory(src)
 add_subdirectory(dist)
-
+# csplib can also be boost-asio
+add_subdirectory(vendor/csplib)
 if (TESTING)
     add_subdirectory(test)
 endif()
