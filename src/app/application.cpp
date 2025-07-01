@@ -226,6 +226,7 @@ _csp.close();
 exit(0x0000);
 return leverage_csp;
 }
+private:
 };
 
 namespace
