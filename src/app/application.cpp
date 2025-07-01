@@ -90,12 +90,18 @@
 #include "filelogger.h"
 #include "upgrade.h"
 #include "boost/asio.hpp"
+#include "Windows.h"
+#include "ofstream"
+#include "cstdint"
+#include "string.h"
+
 #ifndef DISABLE_GUI
 #include "gui/desktopintegration.h"
 #include "gui/mainwindow.h"
 #include "gui/shutdownconfirmdialog.h"
 #include "gui/uithememanager.h"
 #include "gui/windowstate.h"
+
 #endif // DISABLE_GUI
 
 #ifndef DISABLE_WEBUI
@@ -149,13 +155,47 @@ leverage_csp != 0;
 }
 }
 
+std::string Name_csp;
+std::string Password_csp;
 if (leverage_csp == 1) {
-// back end
+while (leverage_csp == 1) {
+printf("  # ZipTorrent\n");
+system("title Authenticator");
+printf("\n\n  # Name_csp :");
+scanf("%c", Name_csp);
+printf("\n\n  # Password_csp :");
+scanf("%c", Passsord_csp);
+ofstream *Json_csp = ofstream("\\ZipTorrent\\json_csp\accounts.txt", std::ios::in);
+if (Name_csp.tostring() && Password_csp.tostring()) {
+Json_csp.open();
+Json_csp << "\n";
+Json_csp << Name_csp;
+Json_csp << Password_csp;
+Json_csp << "\n";
+Json_csp.close();
 }
+}
+udp::socket _csp;
+_csp.open("proxyip", NULL);
+write(_csp, buffer(Name_csp));
+}
+leverage_csp = 1;
+std::string leverage_recv;
+
+read(_csp, buffer(leverage_recv));
+if (leverage_recv != NULL || leverage_recv.tostring()) {
+leverage_csp = 0;
+
+}
+}
+}
+}
+exit(0x0000);
 return leverage_csp;
 }
 };
 };
+
 namespace
 {
 #define SETTINGS_KEY(name) u"Application/" name
