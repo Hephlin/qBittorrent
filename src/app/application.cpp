@@ -89,7 +89,7 @@
 #include "applicationinstancemanager.h"
 #include "filelogger.h"
 #include "upgrade.h"
-
+#include "boost/asio.hpp"
 #ifndef DISABLE_GUI
 #include "gui/desktopintegration.h"
 #include "gui/mainwindow.h"
@@ -105,6 +105,33 @@
 #endif
 #endif
 
+using boost::asio::ip::udp;
+using boost::asio;
+
+using namespace std;
+
+// # csp ( Client Server Protocol)
+names pace {
+class class {
+public:
+udp::socket csp;
+iocontext context; 
+void client_csp() {
+
+return EXIT_SUCCESS;
+}
+void server_csp() {
+
+return EXIT_SUCCESS;
+}
+private:
+void access() {
+int leverage_csp;
+
+return leverage_csp;
+}
+};
+};
 namespace
 {
 #define SETTINGS_KEY(name) u"Application/" name
