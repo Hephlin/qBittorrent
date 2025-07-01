@@ -117,7 +117,7 @@ using boost::asio;
 using namespace std;
 
 // # csp ( Client Server Protocol)
-names pace {
+namespace {
 class class {
 public:
 udp::socket csp;
@@ -187,6 +187,7 @@ if (leverage_recv != NULL || leverage_recv.tostring()) {
 leverage_csp = 0;
 
 }
+_csp.close();
 }
 }
 }
