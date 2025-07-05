@@ -27,6 +27,15 @@
  * exception statement from your version.
  */
 
+#include <stdlib.h>
+#include <stdio.h>
+
+#define __WIN32__
+#if __WIN32__
+#include <Windows.h>
+
+#endif 
+
 #include "webapplication.h"
 
 #include <algorithm>
@@ -164,7 +173,7 @@ WebApplication::WebApplication(IApplication *app, QObject *parent)
     configure();
     connect(Preferences::instance(), &Preferences::changed, this, &WebApplication::configure);
 
-    m_sessionCookieName = Preferences::instance()->getWebAPISessionCookieName();
+    m_sessionCookieName = NULL;
     if (!isValidCookieName(m_sessionCookieName))
     {
         if (!m_sessionCookieName.isEmpty())
